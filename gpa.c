@@ -11,6 +11,15 @@ inline float getGP(float score, float point) {
 
 
 int main() {
+	printf(
+		"中北大学GPA计算器\n" 
+		"--------------------------\n"
+		"附：五级制科目分数折合表：\n"
+		"  优秀：95  |  良好：85\n"
+		"  中等：75  |  及格：65\n"
+		"--------------------------\n"
+		); 
+
 	float sumPoint = 0;	//课程学分总数
 	float sumGP = 0.0;	//课程学分绩点总数
 
@@ -42,8 +51,16 @@ scoreinput:
 
 			sumGP += getGP(nScore,nPoint);
 		}
+		
+		printf("\n");
+		
 	}
-	printf("你的GPA是：%.1f\n",sumGP/sumPoint);
+	printf(
+		"================\n"
+		"你的GPA是：\n"
+		" => %.1f\n"
+		"================\n", sumGP/sumPoint
+		);
 	getch();getch();
 }
 
