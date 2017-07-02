@@ -11,6 +11,11 @@ int main() {
 		scanf("%f", &nPoint);
 		
 		if (nPoint < 0) {
+			if (n == 1) {
+				//在第一个课程就结束时不必参与后面计算 
+				//应予以直接结束
+				return 0; 
+			}
 			break;
 		} else {
 			sumPoint += nPoint; 
