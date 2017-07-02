@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 
 inline float getGP(float score, float point) {
 	if (score < 60) {
@@ -43,5 +44,6 @@ scoreinput:
 		}
 	}
 	printf("ÄãµÄGPAÊÇ£º%.1f\n",sumGP/sumPoint);
+	getch();getch();
 }
 
