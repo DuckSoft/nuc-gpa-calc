@@ -30,8 +30,14 @@ int main() {
 			sumPoint += nPoint;
 
 			int nScore;	//本课程考试成绩
+scoreinput:
 			printf("课程 #%d 考试成绩(0～100):\n ->", n);
 			scanf("%d",&nScore);
+			
+			if (nScore < 0 || nScore > 100) {
+				printf(" - 输入的成绩无效！请重新输入！");
+				goto scoreinput;
+			}
 
 			sumGP += getGP(nScore,nPoint);
 		}
