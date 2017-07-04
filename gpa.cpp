@@ -1,14 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
-inline float getGP(float score, float point) {
-	if (score < 60) {
-		return 0.0;
-	} else {
-		return point*(score/10-5);
-	}
-}
-
 
 int main() {
 	using namespace std;
@@ -55,8 +47,16 @@ scoreinput:
 				cout << " - 输入的成绩无效！请重新输入！" << endl;
 				goto scoreinput;
 			}
-
-			sumGP += getGP(nScore,nPoint);
+			
+			// lambda function
+			sumGP += [](float score, float point)->float {
+				if (score < 60) {
+					return 0.0;
+				}
+				else {
+					return point*(score / 10 - 5);
+				}
+			} (nScore, nPoint);
 		}
 		
 		cout << endl;
